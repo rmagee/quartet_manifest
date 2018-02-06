@@ -2,14 +2,11 @@
 quartet_manifest
 =============================
 
-.. image:: https://badge.fury.io/py/quartet_manifest.svg
-    :target: https://badge.fury.io/py/quartet_manifest
+.. image:: https://gitlab.com/serial-lab/quartet_manifest/badges/master/pipeline.svg
+    :target: https://gitlab.com/serial-lab/quartet_manifest/commits/master
 
-.. image:: https://travis-ci.org/serial-lab/quartet_manifest.svg?branch=master
-    :target: https://travis-ci.org/serial-lab/quartet_manifest
-
-.. image:: https://codecov.io/gh/serial-lab/quartet_manifest/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/serial-lab/quartet_manifest
+.. image:: https://gitlab.com/serial-lab/quartet_manifest/badges/master/coverage.svg
+    :target: https://gitlab.com/serial-lab/quartet_manifest/commits/master
 
 Reports back configuration and capabilities to quartet-ui.
 
