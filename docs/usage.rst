@@ -2,17 +2,34 @@
 Usage
 =====
 
-To use quartet_manifest in a project, add it to your `INSTALLED_APPS`:
+Dependencies
+____________
+First, make sure you have Django_ and the `Django Rest Framework`_ installed and
+you have an active project started.  See the Django and Django Rest Framework
+documentation below if you are unfamiliar with this process.
+
+.. _Django: https://docs.djangoproject.com
+.. _Django Rest Framework: http://www.django-rest-framework.org/
+
+
+Modfiy settings.py
+___________
+
+To use quartet_manifest in a project, first, add it to your `INSTALLED_APPS`:
 
 .. code-block:: python
 
     INSTALLED_APPS = (
         ...
-        'quartet_manifest.apps.QuartetManifestConfig',
+        'rest_framework',
+        'quartet_manifest',
         ...
     )
 
-Add quartet_manifest's URL patterns:
+Add the URL patterns
+___________
+
+In your project's `urls.py`, add quartet_manifest's URL patterns:
 
 .. code-block:: python
 
@@ -21,6 +38,19 @@ Add quartet_manifest's URL patterns:
 
     urlpatterns = [
         ...
-        url(r'^', include(quartet_manifest_urls)),
+        path('manifest/', include('quartet_manifest.urls')),
         ...
     ]
+
+Test the URL
+____________
+Navigate to the configured host/port and url using the structure below:
+
+http://[your host name]:[your port]/manifest/quartet-manifest/?format=json
+
+You should get a return value as below
+
+.. code-block:: javascript
+
+    [..."rest_framework","quartet_manifest","quartet_epcis"...]
+
