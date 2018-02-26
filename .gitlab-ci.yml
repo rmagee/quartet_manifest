@@ -28,6 +28,8 @@ python3_6_unit_test:
   artifacts:
     paths:
       - htmlcov/
+      - expire_in: 1h
+
 
 pages:
     image: seriallab/python3.5dev
