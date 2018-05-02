@@ -5,7 +5,7 @@ import re
 import sys
 
 try:
-    from setuptools import setup
+    from setuptools import setup, find_packages
 except ImportError:
     from distutils.core import setup
 
@@ -48,16 +48,14 @@ setup(
     name='quartet_manifest',
     version=version,
     description="""Reports back configuration and capabilities to quartet-ui.""",
-    long_description=readme + '\n\n' + history,
-    author='Rob Magee',
+    long_description=readme,
+    author='SerialLab Corp',
     author_email='slab@serial-lab.com',
     url='https://gitlab.com/serial-lab/quartet_manifest',
-    packages=[
-        'quartet_manifest',
-    ],
+    packages=find_packages(),
     include_package_data=True,
     install_requires=[],
-    license="MIT",
+    license="GPLv3",
     zip_safe=False,
     keywords='quartet_manifest',
     classifiers=[
@@ -68,11 +66,12 @@ setup(
         'Framework :: Django :: 1.10',
         'Framework :: Django :: 2.0',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
     ],
 )
