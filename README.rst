@@ -8,66 +8,60 @@ quartet_manifest
 .. image:: https://gitlab.com/serial-lab/quartet_manifest/badges/master/coverage.svg
     :target: https://gitlab.com/serial-lab/quartet_manifest/commits/master
 
-Reports back configuration and capabilities to quartet-ui.
+Reports back QU4RTET configuration and capabilities to quartet-ui.
 
 Documentation
 -------------
 
-The full documentation is at https://quartet_manifest.readthedocs.io.
+Dependencies
+____________
+First, make sure you have Django_ and the `Django Rest Framework`_ installed and
+you have an active project started.  See the Django and Django Rest Framework
+documentation below if you are unfamiliar with this process.
 
-Quickstart
-----------
+.. _Django: https://docs.djangoproject.com
+.. _Django Rest Framework: http://www.django-rest-framework.org/
 
-Install quartet_manifest::
 
-    pip install quartet_manifest
+Modfiy settings.py
+__________________
 
-Add it to your `INSTALLED_APPS`:
+To use quartet_manifest in a project, first, add it to your `INSTALLED_APPS`:
 
-.. code-block:: python
+.. code-block::text
 
     INSTALLED_APPS = (
         ...
-        'quartet_manifest.apps.QuartetManifestConfig',
+        'rest_framework',
+        'quartet_manifest',
         ...
     )
 
-Add quartet_manifest's URL patterns:
+Add the URL patterns
+____________________
 
-.. code-block:: python
+In your project's `urls.py`, add quartet_manifest's URL patterns:
+
+.. code-block::python
 
     from quartet_manifest import urls as quartet_manifest_urls
 
 
     urlpatterns = [
         ...
-        url(r'^', include(quartet_manifest_urls)),
+        path('manifest/', include('quartet_manifest.urls')),
         ...
     ]
 
-Features
---------
+Test the URL
+____________
+Navigate to the configured host/port and url using the structure below:
 
-* TODO
+http://[your host name]:[your port]/manifest/quartet-manifest/?format=json
 
-Running Tests
--------------
+You should get a return value as below
 
-Does the code actually work?
+.. code-block::javascript
 
-::
+    [..."rest_framework","quartet_manifest","quartet_epcis"...]
 
-    source <YOURVIRTUALENV>/bin/activate
-    (myenv) $ pip install tox
-    (myenv) $ tox
-
-Credits
--------
-
-Tools used in rendering this package:
-
-*  Cookiecutter_
-*  `cookiecutter-djangopackage`_
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`cookiecutter-djangopackage`: https://github.com/pydanny/cookiecutter-djangopackage
