@@ -7,6 +7,9 @@ quartet_manifest
 
 .. image:: https://gitlab.com/serial-lab/quartet_manifest/badges/master/coverage.svg
     :target: https://gitlab.com/serial-lab/quartet_manifest/commits/master
+    
+.. image:: https://badge.fury.io/py/quartet_manifest.svg
+    :target: https://badge.fury.io/py/quartet_manifest
 
 Reports back QU4RTET configuration and capabilities to quartet-ui.
 
