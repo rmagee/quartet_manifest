@@ -28,7 +28,7 @@ __________________
 
 To use quartet_manifest in a project, first, add it to your `INSTALLED_APPS`:
 
-.. code-block::text
+.. code-block:: text
 
     INSTALLED_APPS = (
         ...
@@ -42,7 +42,7 @@ ____________________
 
 In your project's `urls.py`, add quartet_manifest's URL patterns:
 
-.. code-block::python
+.. code-block:: text
 
     from quartet_manifest import urls as quartet_manifest_urls
 
